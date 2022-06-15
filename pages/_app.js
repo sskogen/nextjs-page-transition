@@ -9,10 +9,14 @@ import coffee from "../public/coffee.jpeg";
 function MyApp({Component, pageProps, router}) {
     const [animate, setAnimate] = useState("initial");
 
+    const getVariantByCurrentPath = (path) => {
+        return /oslo/.test(path) ? "open" : "initial";
+    }
+
     useEffect(() => {
-        setAnimate(/oslo/.test(router.pathname) ? "open" : "initial");
+        setAnimate(getVariantByCurrentPath(router.pathname));
         const handleRouteChange = (url) => {
-            setAnimate(/oslo/.test(url) ? "open" : "initial");
+            setAnimate(getVariantByCurrentPath(url));
         };
         router.events.on("routeChangeStart", handleRouteChange);
         return () => {
@@ -21,7 +25,7 @@ function MyApp({Component, pageProps, router}) {
     }, [router.pathname, router.events]);
 
     return (
-        <motion.div animate={animate} initial={"initial"}>
+        <motion.div animate={animate} initial={getVariantByCurrentPath(router.pathname)}>
             <div
                 style={{
                     filter: "drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.35))",
@@ -40,6 +44,9 @@ function MyApp({Component, pageProps, router}) {
                             clipPath: "inset(5% 0% 0% 0%)",
                             scale: 1.2,
                         },
+                    }}
+                    transition={{
+                        duration: 0.3
                     }}
                     style={{
                         position: "absolute",
