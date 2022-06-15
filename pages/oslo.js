@@ -1,10 +1,10 @@
 import Head from 'next/head'
 
-export default function Index() {
+export default function Oslo() {
     return (
         <div>
             <Head>
-                <title>Lost in Oslo</title>
+                <title>About</title>
             </Head>
         </div>
     )
