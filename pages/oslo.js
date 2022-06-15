@@ -4,7 +4,7 @@ export default function Oslo() {
     return (
         <div>
             <Head>
-                <title>About</title>
+                <title>Oslo</title>
             </Head>
         </div>
     )
