@@ -95,7 +95,7 @@ function MyApp({ Component, pageProps, router }) {
               className="title"
               style={{
                 position: "absolute",
-                color: "#622c11",
+                color: "#776a5e",
                 bottom: "10%",
                 left: "9%",
                 lineHeight: 0.9,
@@ -119,7 +119,7 @@ function MyApp({ Component, pageProps, router }) {
               className={"byline"}
               style={{
                 position: "absolute",
-                color: "white",
+                color: "#776a5e",
                 bottom: "10%",
                 left: "9%",
                 opacity: 0,
