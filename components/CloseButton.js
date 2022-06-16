@@ -9,7 +9,7 @@ export default function CloseButton({ onClick, style }) {
         borderRadius: "200px",
         padding: "8px",
         cursor: "pointer",
-          ...style
+        ...style,
       }}
       onClick={onClick}
     >

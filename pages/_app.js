@@ -11,7 +11,7 @@ function MyApp({Component, pageProps, router}) {
 
     const getVariantByCurrentPath = (path) => {
         return /oslo/.test(path) ? "open" : "initial";
-    }
+    };
 
     useEffect(() => {
         setAnimate(getVariantByCurrentPath(router.pathname));
@@ -25,7 +25,10 @@ function MyApp({Component, pageProps, router}) {
     }, [router.pathname, router.events]);
 
     return (
-        <motion.div animate={animate} initial={getVariantByCurrentPath(router.pathname)}>
+        <motion.div
+            animate={animate}
+            initial={getVariantByCurrentPath(router.pathname)}
+        >
             <div
                 style={{
                     filter: "drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.35))",
@@ -46,7 +49,7 @@ function MyApp({Component, pageProps, router}) {
                         },
                     }}
                     transition={{
-                        duration: 0.3
+                        duration: 0.3,
                     }}
                     style={{
                         position: "absolute",
@@ -92,7 +95,7 @@ function MyApp({Component, pageProps, router}) {
                             className="title"
                             style={{
                                 position: "absolute",
-                                color: "white",
+                                color: "#622c11",
                                 bottom: "10%",
                                 left: "9%",
                                 lineHeight: 0.9,
